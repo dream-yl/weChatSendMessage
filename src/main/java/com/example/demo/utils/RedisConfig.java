@@ -30,7 +30,6 @@ public class RedisConfig {
 
     public  void setAccessToken(String accessToken,long time){
         ValueOperations<String, String> operations = redisTemplate.opsForValue();
-        operations.set("token",accessToken);
         operations.set("token",accessToken,time, TimeUnit.SECONDS);
         log.info("token没有缓存，新生成的："+accessToken);
     }
