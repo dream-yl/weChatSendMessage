@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 public class WX_TokenUtil {
 
     private static Logger log = LoggerFactory.getLogger(WX_TokenUtil.class);
+
     /**
      *  获得微信 AccessToken
      * access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。
@@ -32,7 +33,6 @@ public class WX_TokenUtil {
                 log.error("获取token失败 errcode:{} errmsg:{}", jsonObject.getInteger("errcode"), jsonObject.getString("errmsg"));
             }
         }
-
         return access_token;
     }
 

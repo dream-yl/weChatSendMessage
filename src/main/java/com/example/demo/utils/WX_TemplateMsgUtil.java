@@ -4,12 +4,17 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.demo.entity.TemplateData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.Map;
 
 public class WX_TemplateMsgUtil {
 
     private static Logger log = LoggerFactory.getLogger(WX_TemplateMsgUtil.class);
+
+    @Autowired
+    private  static RedisTemplate redisTemplate;
 
     /**
      * 封装模板详细信息
@@ -81,6 +86,7 @@ public class WX_TemplateMsgUtil {
      * @return
      */
     public static String sendWechatMsgToUser(String touser, String templatId, String clickurl, String topcolor, JSONObject data) {
+
         String tmpurl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token="+ WX_TokenUtil.getWXToken().getAccessToken();
         JSONObject json = new JSONObject();
         json.put("touser", touser);
