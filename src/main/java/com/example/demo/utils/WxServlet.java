@@ -36,7 +36,7 @@ public class WxServlet extends HttpServlet{
         out = null;
     }
 
-    /* (non-Javadoc)
+    /* (non-Javadoc)dddd
      * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
      */
     @Override
